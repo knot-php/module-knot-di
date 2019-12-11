@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 use KnotLib\Kernel\Di\DiContainerInterface;
 use KnotLib\Kernel\NullObject\NullDi;
-use KnotModule\KnotDi\KnotDiModule;
+use KnotPhp\Module\KnotDi\KnotDiModule;
 
 final class KnotDiModuleTest extends TestCase
 {

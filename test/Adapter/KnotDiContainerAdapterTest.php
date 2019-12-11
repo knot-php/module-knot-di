@@ -5,7 +5,7 @@ namespace KnotModule\KnotDi\Test;
 
 use Throwable;
 
-use KnotModule\KnotDi\Adapter\KnotDiContainerAdapter;
+use KnotPhp\Module\KnotDi\Adapter\KnotDiContainerAdapter;
 use KnotLib\Di\Container;
 use PHPUnit\Framework\TestCase;
 
