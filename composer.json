@@ -1,0 +1,34 @@
+{
+  "name": "knot-php/module-knot-di",
+  "description": "knot-lib/di installer modules",
+  "keywords": ["PHP","DI","Dependency Injection","Module","kNot Framework"],
+  "homepage": "https://github.com/knot-php/module-knot-di",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Katsuki Shuto",
+      "email": "stk2k@knot-framework.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.1",
+    "knot-lib/di": "~0.1",
+    "knot-lib/module": "~0.1"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^6.3.0",
+    "php-coveralls/php-coveralls": "^2.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "KnotPhp\\Module\\KnotDi\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "KnotPhp\\Module\\KnotDi\\Test\\": "test/include/",
+      "KnotPhp\\Module\\KnotDi\\Demo\\": "demo/include/"
+    }
+  }
+}
