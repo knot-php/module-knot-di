@@ -3,10 +3,10 @@ declare(strict_types=1);
 
 namespace KnotPhp\Module\KnotDi;
 
+use KnotLib\Kernel\Module\ModuleInterface;
 use Throwable;
 
 use KnotLib\Di\Container;
-use KnotLib\Kernel\Module\AbstractModule;
 use KnotLib\Kernel\Exception\ModuleInstallationException;
 use KnotLib\Kernel\Kernel\ApplicationInterface;
 use KnotLib\Kernel\EventStream\Channels;
@@ -15,14 +15,24 @@ use KnotLib\Kernel\Module\ComponentTypes;
 
 use KnotPhp\Module\KnotDi\Adapter\KnotDiContainerAdapter;
 
-class KnotDiModule extends AbstractModule
+class KnotDiModule implements ModuleInterface
 {
+    /**
+     * Declare dependency on another modules
+     *
+     * @return array
+     */
+    public static function requiredModules() : array
+    {
+        return [];
+    }
+
     /**
      * Declare dependent on components
      *
      * @return array
      */
-    public static function requiredComponents() : array
+    public static function requiredComponentTypes() : array
     {
         return [
             ComponentTypes::EVENTSTREAM,
