@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace KnotPhp\Module\KnotDi;
 
+use KnotLib\Kernel\Module\AbstractModule;
 use Throwable;
 
 use KnotLib\Di\Container;
@@ -10,12 +11,11 @@ use KnotLib\Kernel\Exception\ModuleInstallationException;
 use KnotLib\Kernel\Kernel\ApplicationInterface;
 use KnotLib\Kernel\EventStream\Channels;
 use KnotLib\Kernel\EventStream\Events;
-use KnotLib\Kernel\Module\ComponentModule;
-use KnotLib\Kernel\Module\Components;
+use KnotLib\Kernel\Module\ComponentTypes;
 
 use KnotPhp\Module\KnotDi\Adapter\KnotDiContainerAdapter;
 
-class KnotDiModule extends ComponentModule
+class KnotDiModule extends AbstractModule
 {
     /**
      * Declare dependent on components
@@ -25,8 +25,8 @@ class KnotDiModule extends ComponentModule
     public static function requiredComponents() : array
     {
         return [
-            Components::EVENTSTREAM,
-            Components::LOGGER,
+            ComponentTypes::EVENTSTREAM,
+            ComponentTypes::LOGGER,
         ];
     }
 
@@ -37,7 +37,7 @@ class KnotDiModule extends ComponentModule
      */
     public static function declareComponentType() : string
     {
-        return Components::DI;
+        return ComponentTypes::DI;
     }
 
     /**
