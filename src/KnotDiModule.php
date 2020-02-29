@@ -3,10 +3,10 @@ declare(strict_types=1);
 
 namespace KnotPhp\Module\KnotDi;
 
-use KnotLib\Kernel\Module\AbstractModule;
 use Throwable;
 
 use KnotLib\Di\Container;
+use KnotLib\Kernel\Module\AbstractModule;
 use KnotLib\Kernel\Exception\ModuleInstallationException;
 use KnotLib\Kernel\Kernel\ApplicationInterface;
 use KnotLib\Kernel\EventStream\Channels;
