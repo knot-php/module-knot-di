@@ -1,12 +1,12 @@
-<?php
+<?php /** @noinspection PhpMissingReturnTypeInspection */
 declare(strict_types=1);
 
-namespace KnotPhp\Module\KnotDi\Adapter;
+namespace knotphp\module\knotdi\adapter;
 
-use KnotLib\Di\ContainerInterface;
-use KnotLib\Di\Exception\ContainerException;
-use KnotLib\Kernel\Di\DiContainerInterface;
-use KnotLib\Kernel\Exception\DiContainerException;
+use knotlib\di\ContainerInterface;
+use knotlib\di\exception\ContainerException;
+use knotlib\kernel\di\DiContainerInterface;
+use knotlib\kernel\exception\DiContainerException;
 
 class KnotDiContainerAdapter implements DiContainerInterface
 {
@@ -37,9 +37,9 @@ class KnotDiContainerAdapter implements DiContainerInterface
         try{
             return $this->container->get($id);
         }
-        catch(ContainerException $e)
+        catch(ContainerException $ex)
         {
-            throw new DiContainerException('Getting component failed:' . $e->getMessage(), 0, $e);
+            throw new DiContainerException('Getting component failed:' . $ex->getMessage(), $ex);
         }
     }
 
@@ -50,7 +50,7 @@ class KnotDiContainerAdapter implements DiContainerInterface
      *
      * @return bool
      */
-    public function has($id) : bool
+    public function has(string $id) : bool
     {
         return $this->container->has($id);
     }
@@ -58,46 +58,46 @@ class KnotDiContainerAdapter implements DiContainerInterface
     /**
      *  ArrayAccess interface : offsetGet() implementation
      *
-     * @param mixed $id
+     * @param mixed $offset
      *
      * @return mixed
      */
-    public function offsetGet($id)
+    public function offsetGet($offset)
     {
-        return $this->container->offsetGet($id);
+        return $this->container->offsetGet($offset);
     }
 
     /**
      *  ArrayAccess interface : offsetSet() implementation
      *
-     * @param mixed $id
+     * @param mixed $offset
      * @param mixed $value
      */
-    public function offsetSet($id, $value)
+    public function offsetSet($offset, $value)
     {
-        $this->container->offsetSet($id, $value);
+        $this->container->offsetSet($offset, $value);
     }
 
     /**
      *  ArrayAccess interface : offsetExists() implementation
      *
-     * @param mixed $id
+     * @param mixed $offset
      *
      * @return bool
      */
-    public function offsetExists($id)
+    public function offsetExists($offset)
     {
-        return $this->container->offsetExists($id);
+        return $this->container->offsetExists($offset);
     }
 
     /**
      *  ArrayAccess interface : offsetUnset() implementation
      *
-     * @param mixed $id
+     * @param mixed $offset
      */
-    public function offsetUnset($id)
+    public function offsetUnset($offset)
     {
-        $this->container->offsetUnset($id);
+        $this->container->offsetUnset($offset);
     }
 
     /**
@@ -108,9 +108,9 @@ class KnotDiContainerAdapter implements DiContainerInterface
         try{
             $this->container->extend($id, $extend_callback);
         }
-        catch(ContainerException $e)
+        catch(ContainerException $ex)
         {
-            throw new DiContainerException('Extending component failed:' . $e->getMessage(), 0, $e);
+            throw new DiContainerException('Extending component failed:' . $ex->getMessage(), $ex);
         }
     }
 }

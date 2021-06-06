@@ -1,13 +1,15 @@
 <?php
 declare(strict_types=1);
 
-namespace KnotModule\KnotDi\Test;
+namespace knotphp\module\knotdi\test;
 
 use PHPUnit\Framework\TestCase;
 
-use KnotLib\Kernel\Di\DiContainerInterface;
-use KnotLib\Kernel\NullObject\NullDi;
-use KnotPhp\Module\KnotDi\KnotDiModule;
+use knotlib\kernel\di\DiContainerInterface;
+use knotlib\kernel\nullobject\NullDi;
+
+use knotphp\module\knotdi\KnotDiModule;
+use knotphp\module\knotdi\test\classes\TestApplication;
 
 final class KnotDiModuleTest extends TestCase
 {

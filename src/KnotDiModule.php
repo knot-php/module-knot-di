@@ -1,19 +1,19 @@
 <?php
 declare(strict_types=1);
 
-namespace KnotPhp\Module\KnotDi;
+namespace knotphp\module\knotdi;
 
-use KnotLib\Kernel\Module\ModuleInterface;
 use Throwable;
 
-use KnotLib\Di\Container;
-use KnotLib\Kernel\Exception\ModuleInstallationException;
-use KnotLib\Kernel\Kernel\ApplicationInterface;
-use KnotLib\Kernel\EventStream\Channels;
-use KnotLib\Kernel\EventStream\Events;
-use KnotLib\Kernel\Module\ComponentTypes;
+use knotlib\di\Container;
+use knotlib\kernel\module\ModuleInterface;
+use knotlib\kernel\exception\ModuleInstallationException;
+use knotlib\kernel\kernel\ApplicationInterface;
+use knotlib\kernel\eventstream\Channels;
+use knotlib\kernel\eventstream\Events;
+use knotlib\kernel\module\ComponentTypes;
 
-use KnotPhp\Module\KnotDi\Adapter\KnotDiContainerAdapter;
+use knotphp\module\knotdi\adapter\KnotDiContainerAdapter;
 
 class KnotDiModule implements ModuleInterface
 {

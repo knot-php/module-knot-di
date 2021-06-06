@@ -1,13 +1,15 @@
 <?php
 declare(strict_types=1);
 
-namespace KnotModule\KnotDi\Test;
+namespace knotphp\module\knotdi\test\adapter;
 
 use Throwable;
-
-use KnotPhp\Module\KnotDi\Adapter\KnotDiContainerAdapter;
-use KnotLib\Di\Container;
 use PHPUnit\Framework\TestCase;
+
+use knotlib\di\Container;
+
+use knotphp\module\knotdi\adapter\KnotDiContainerAdapter;
+use knotphp\module\knotdi\test\classes\Car;
 
 final class KnotDiContainerAdapterTest extends TestCase
 {

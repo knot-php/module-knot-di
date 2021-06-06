@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace KnotModule\KnotDi\Test;
+namespace knotphp\module\knotdi\test\classes;
 
-use KnotLib\Kernel\FileSystem\FileSystemInterface;
-use KnotLib\Kernel\FileSystem\AbstractFileSystem;
-use KnotLib\Kernel\FileSystem\Dir;
+use knotlib\kernel\filesystem\FileSystemInterface;
+use knotlib\kernel\filesystem\AbstractFileSystem;
+use knotlib\kernel\filesystem\Dir;
 
 final class TestFileSystem extends AbstractFileSystem implements FileSystemInterface
 {
